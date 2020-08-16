@@ -119,3 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Redirect upon Login and Logout
+LOGIN_REDIRECT_URL = 'profile-details'
+LOGOUT_REDIRECT_URL = 'login'
