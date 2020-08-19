@@ -29,4 +29,4 @@ The logic used as of now is that, say you have **x** questions in common with a 
 
 This project is currently written using Django 3.1 and Python 3.8.5. Very limited HTML5 and CSS3 have been used yet.
 
-# IN DEVELOPMENT AS OF 19 AUG' 20
+## IN DEVELOPMENT AS OF 19 AUG' 20
