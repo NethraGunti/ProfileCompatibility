@@ -3,7 +3,7 @@ from django.conf.urls.static import static
 from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
 
-from users.views import home, register, profileDetials, question1, question2, question3
+from users.views import home, register, profileDetials, question1, question2, question3, compatibility, editProfile
 
 urlpatterns = [
     path('', home, name='home'),
@@ -14,6 +14,8 @@ urlpatterns = [
     path('questions/1', question1, name='question1'),
     path('questions/2', question2, name='question2'),
     path('questions/3', question3, name='question3'),
+    path('compatibility/', compatibility, name='compatibility'),
+    path('edit-profile/', editProfile, name='edit-profile'),
     
 ]
 

@@ -9,10 +9,13 @@
         <a href="{% url 'logout' %}">Logout</a>
     </div>
     <div>
+        <a href="{% url 'compatibility' %}">Home</a>
+    </div>
+    <div>
         <form method = "post" enctype="multipart/form-data"> 
             {% csrf_token %} 
             {{ form.as_p }} 
-            <button type="submit">Next</button> 
+            <button type="submit">Submit</button> 
         </form>
     </div>
      

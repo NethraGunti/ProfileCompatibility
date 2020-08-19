@@ -18,7 +18,7 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = '__all__'
-        exclude = ['user', 'status']
+        exclude = ['user']
     
     def save(self, user, commit=True):
         instance = super(ProfileForm, self).save(commit=False)
@@ -40,4 +40,10 @@ class Choice1Form(forms.Form):
     def is_valid(self):
         valid = super(Choice1Form, self).is_valid()
         return True
-        
+
+
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = "__all__"
+        exclude = ['user']

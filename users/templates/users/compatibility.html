@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Hotel_image</title> 
+</head> 
+<body>
+    <div style="text-align: center;">
+        <img src="{{ current.image.url }}" alt="{{ current.user.username }}" style="border-radius: 50%;height: 150px; width: 150px;">
+        <h1> {{current.user.username}} </h1>            
+        <a href="{% url 'logout' %}">Logout</a>
+        <br>
+        <a href="{% url 'edit-profile' %}">Edit Profile</a>
+    </div>
+    <div style="margin-top: 100px;">
+        <h2>
+            Compatible Profiles
+        </h2>
+        <div style="margin-top: 50px;">
+            {% for profile, percent, answers in  matches%}
+                <div style="margin-top: 20px;height: 200px;width: 100%;">
+                    <div style="float: left;height: 100%;text-align: center; margin-left: 25px;">
+                        <img src="{{ profile.image.url }}" alt="{{ profile.user.username }}" style="border-radius: 50%;height: 150px; width: 150px;">
+                        <h3> {{profile.user.username}} </h3>    
+                    </div>
+                    <div style="width: 200px; float: left; height: 100%;font-size:30px; text-align: center;margin-left: 20px;">
+                        <h2>
+                            {{percent}}%
+                        </h2>
+                    </div>
+                    <div style="width: 30%; float: left;height: 100%;margin-left: 25px;text-align: center;">
+                        <h4 style="text-decoration: underline;">
+                            SIMILARITIES
+                        </h4>
+                        <p style="font-style: italic;">
+                            {% for ans in  answers%}
+                                '' {{ ans.option }} ''
+                            {% endfor %}
+                        </p>
+                    </div>
+                    <div style="width: 30%; float: left;height: 100%;margin-left: 25px;text-align: left;">
+                        <h4>
+                            Others:
+                        </h4>
+                        <p>
+                            <span style="font-weight: bold;">Name: </span>&emsp;{{profile.name}}
+                            <br>
+                            <span style="font-weight: bold;">Age: </span>&emsp;{{profile.age}}
+                            <br>
+                            <span style="font-weight: bold;">Social Media: </span>&emsp;{{profile.social_media}}
+                            <br>
+                            <span style="font-weight: bold;">Company: </span>&emsp;{{profile.current_company}}
+                            <br>
+                            <span style="font-weight: bold;">Current Salary: </span>&emsp;{{profile.current_salary}}
+                            <br>
+                            <span style="font-weight: bold;">Contact: </span>&emsp;{{profile.phone}}
+                            <br>
+                        </p>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+            {% endfor %}
+        </div>
+    </div>
+</body> 
+</html>
